@@ -64,6 +64,7 @@ body {
 
 /* Food Truck Card */
 .food-truck-card {
+  position: relative;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -72,7 +73,8 @@ body {
   width: 290px;
   height: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  perspective: 1000px;
+  cursor: pointer;
+  overflow: hidden; 
 }
 
 .food-truck-card:hover {
@@ -80,10 +82,46 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+
 .food-truck-card__image {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+  display: block;
+}
+
+.food-truck-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; 
+  transition: opacity 0.5s ease; 
+  z-index: 1;
+  border-radius: 8px; 
+}
+
+.food-truck-card__overlay-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.food-truck-card:hover .food-truck-card__overlay {
+  opacity: 1;
+}
+
+.food-truck-card__name,
+.food-truck-card__description {
+  position: relative;
+  z-index: 2;
 }
 
 .food-truck-card__name {
@@ -96,18 +134,4 @@ body {
   font-size: 0.9rem;
   color: #555;
   margin: 0.5rem 0;
-}
-
-.food-truck-card__menu-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.food-truck-card__menu-button:hover {
-  background-color: #0056b3;
 }
