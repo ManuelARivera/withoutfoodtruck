@@ -135,3 +135,11 @@ body {
   color: #555;
   margin: 0.5rem 0;
 }
+
+/* Responsividad */
+@media (max-width: 769px) {
+  .app__body{
+    justify-content: center;
+    padding: 30px 0px;
+  }
+}

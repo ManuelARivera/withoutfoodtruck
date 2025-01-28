@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { Stack, Autocomplete, TextField, Tooltip } from "@mui/material";
 import PlaceIcon from '@mui/icons-material/Place';
